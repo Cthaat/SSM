@@ -1,5 +1,9 @@
 package com.example.config;
 
+
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.springframework.context.annotation.Bean;
+
 /**
  * @Description: batis
  * @ClassName: MyBatisConfig
@@ -9,4 +13,9 @@ package com.example.config;
  */
 public class MyBatisConfig
 {
+    @Bean
+    public SqlSessionFactoryBean sqlSessionFactory()
+    {
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+    }
 }
