@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface UserDao
 {
+    @Insert
     public void save(User user);
 
     public void update(User user);
