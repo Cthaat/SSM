@@ -20,7 +20,9 @@ public interface UserDao
     @Insert ("update test set workno = #{workno}, name = #{name} where id = #{id}")
     public void update(User user);
 
+    @Insert ("delete from test where id = #{id}")
     public void delete(int id);
+
 
     public User getById(int id);
 
