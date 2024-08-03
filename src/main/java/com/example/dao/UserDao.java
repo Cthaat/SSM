@@ -17,6 +17,7 @@ public interface UserDao
     @Insert ("insert into test (workno, name) values (#{workno} , #{name})")
     public void save(User user);
 
+    @Insert ("update test set workno = #{workno}, name = #{name} where id = #{id}")
     public void update(User user);
 
     public void delete(int id);
