@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.domain.User;
+import org.apache.ibatis.annotations.Insert;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  */
 public interface UserDao
 {
-    @Insert
+    @Insert ("insert into test (workno, name) values (#{workno} , #{name})")
     public void save(User user);
 
     public void update(User user);
