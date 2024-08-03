@@ -1,5 +1,7 @@
 package com.example.config;
 
+import javax.sql.DataSource;
+
 /**
  * @Description: jdbc
  * @ClassName: JdbcConfid
@@ -7,6 +9,10 @@ package com.example.config;
  * @Date: 2024/8/3 23:02
  * @Version: 1.0
  */
-public class JdbcConfid
+public class JdbcConfig
 {
+    public DataSource dataSource()
+    {
+
+    }
 }
