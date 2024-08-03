@@ -23,8 +23,9 @@ public interface UserDao
     @Insert ("delete from test where id = #{id}")
     public void delete(int id);
 
-
+    @Insert ("select * from test where id = #{id}")
     public User getById(int id);
+
 
     public List<User> getAll();
 }
