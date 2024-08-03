@@ -4,6 +4,8 @@ package com.example.config;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.annotation.Bean;
 
+import javax.sql.DataSource;
+
 /**
  * @Description: batis
  * @ClassName: MyBatisConfig
@@ -14,8 +16,11 @@ import org.springframework.context.annotation.Bean;
 public class MyBatisConfig
 {
     @Bean
-    public SqlSessionFactoryBean sqlSessionFactory()
+    public SqlSessionFactoryBean sqlSessionFactory(DataSource dataSource)
     {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSource);
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.example.domain");
+        return sqlSessionFactoryBean;
     }
 }
