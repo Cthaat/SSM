@@ -1,5 +1,9 @@
 package com.example.dao;
 
+import com.example.domain.User;
+
+import java.util.List;
+
 /**
  * @Description: user
  * @ClassName: UserDao
@@ -9,4 +13,13 @@ package com.example.dao;
  */
 public interface UserDao
 {
+    public void save(User user);
+
+    public void update(User user);
+
+    public void delete(int id);
+
+    public User getById(int id);
+
+    public List<User> getAll();
 }
