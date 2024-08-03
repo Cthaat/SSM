@@ -26,6 +26,6 @@ public interface UserDao
     @Insert ("select * from test where id = #{id}")
     public User getById(int id);
 
-
+    @Insert ("select * from test")
     public List<User> getAll();
 }
