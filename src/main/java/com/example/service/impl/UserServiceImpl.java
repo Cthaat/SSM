@@ -1,5 +1,6 @@
 package com.example.service.impl;
 
+import com.example.controller.Code;
 import com.example.dao.UserDao;
 import com.example.domain.User;
 import com.example.exception.BusinessException;
@@ -50,7 +51,7 @@ public class UserServiceImpl implements UserService
     {
         if (id == 0)
         {
-            throw new BusinessException(666 , "id不能为0" , null);
+            throw new BusinessException(Code.BUSINESS_ERR , "id不能为0" , null);
         }
         try
         {
@@ -58,7 +59,7 @@ public class UserServiceImpl implements UserService
         }
         catch (ArithmeticException e)
         {
-            throw new SystemException(666 , "除数不能为0" , e);
+            throw new SystemException(Code.SYSTEM_ERR , "除数不能为0" , e);
         }
 
         return userDao.getById(id);
