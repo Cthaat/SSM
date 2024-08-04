@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 /**
  * @Description: jdbc
- * @ClassName: JdbcConfid
+ * @ClassName: JdbcConfig
  * @Author: Edge
  * @Date: 2024/8/3 23:02
  * @Version: 1.0
