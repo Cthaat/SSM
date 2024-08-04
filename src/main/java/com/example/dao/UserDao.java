@@ -2,6 +2,8 @@ package com.example.dao;
 
 import com.example.domain.User;
 import org.apache.ibatis.annotations.Insert;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,6 +14,8 @@ import java.util.List;
  * @Date: 2024/8/3 23:30
  * @Version: 1.0
  */
+
+@Repository
 public interface UserDao
 {
     @Insert ("insert into test (workno, name) values (#{workno} , #{name})")

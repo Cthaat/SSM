@@ -14,7 +14,7 @@ import org.springframework.context.annotation.PropertySource;
  */
 
 @Configuration
-@ComponentScan ("com.example.service")
+@ComponentScan ({"com.example.service" , "com.example.dao"})
 @PropertySource ("classpath:jdbc.properties")
 @Import({JdbcConfig.class, MyBatisConfig.class})
 public class SpringConfig

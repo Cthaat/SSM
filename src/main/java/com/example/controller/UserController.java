@@ -1,5 +1,10 @@
 package com.example.controller;
 
+import com.example.domain.User;
+import org.apache.ibatis.annotations.Insert;
+
+import java.util.List;
+
 /**
  * @Description: controller
  * @ClassName: UserController
