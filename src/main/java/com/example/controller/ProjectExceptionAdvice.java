@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * @Description: excet
+ * @Description: except
  * @ClassName: ProjectExceptionAdvice
  * @Author: Edge
  * @Date: 2024/8/4 15:05
