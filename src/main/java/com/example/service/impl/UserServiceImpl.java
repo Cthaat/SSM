@@ -25,30 +25,33 @@ public class UserServiceImpl implements UserService
     @Override
     public boolean save(User user)
     {
-        return false;
+        userDao.save(user);
+        return true;
     }
 
     @Override
     public boolean update(User user)
     {
-        return false;
+        userDao.update(user);
+        return true;
     }
 
     @Override
     public boolean delete(int id)
     {
-        return false;
+        userDao.delete(id);
+        return true;
     }
 
     @Override
     public User getById(int id)
     {
-        return null;
+        return userDao.getById(id);
     }
 
     @Override
     public List<User> getAll()
     {
-        return null;
+        return userDao.getAll();
     }
 }
