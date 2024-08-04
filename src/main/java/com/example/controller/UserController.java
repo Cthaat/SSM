@@ -23,32 +23,41 @@ public class UserController
     private UserService userService;
 
     @PostMapping
-    public boolean save(User user)
+    public Result save(User user)
     {
-        return userService.save(user);
+        boolean flag = userService.save(user);
+        return new Result(flag ? Code.SAVE_OK : Code.SAVE_ERR , flag);
     }
 
     @PutMapping
-    public boolean update(User user)
+    public Result update(User user)
     {
-        return userService.update(user);
+        boolean flag = userService.update(user);
+        return new Result(flag ? Code.UPDATE_OK : Code.UPDATE_ERR , flag);
     }
 
     @DeleteMapping
-    public boolean delete(int id)
+    public Result delete(int id)
     {
-        return userService.delete(id);
+        boolean flag = userService.delete(id);
+        return new Result(flag ? Code.DELETE_OK : Code.DELETE_ERR , flag);
     }
 
     @GetMapping("/{id}")
-    public User getById(@PathVariable int id)
+    public Result getById(@PathVariable int id)
     {
-        return userService.getById(id);
+        User user = userService.getById(id);
+        Integer code = user == null ? Code.GET_ERR : Code.GET_OK;
+        String msg = user == null ? "User not found" : "User found";
+        return new Result(code, user, msg);
     }
 
     @GetMapping
-    public List<User> getAll()
+    public Result getAll()
     {
-        return userService.getAll();
+        List<User> users = userService.getAll();
+        Integer code = users == null || users.isEmpty() ? Code.GET_ERR : Code.GET_OK;
+        String msg = users == null || users.isEmpty() ? "User not found" : "User found";
+        return new Result(code, users, msg);
     }
 }

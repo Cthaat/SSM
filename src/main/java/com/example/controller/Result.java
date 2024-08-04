@@ -9,21 +9,21 @@ package com.example.controller;
  */
 public class Result
 {
-    private Object data;
     private Integer code;
     private String message;
+    private Object data;
 
     public Result()
     {
     }
 
-    public Result(Object data , Integer code)
+    public Result(Integer code, Object data)
     {
         this.data = data;
         this.code = code;
     }
 
-    public Result(Object data , Integer code , String message)
+    public Result(Integer code , Object data , String message)
     {
         this.data = data;
         this.code = code;
