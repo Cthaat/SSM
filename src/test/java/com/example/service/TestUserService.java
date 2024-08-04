@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
+
 /**
  * @Description: service
  * @ClassName: UserService
@@ -26,7 +28,7 @@ public class TestUserService
     @Test
     public void testGetById()
     {
-        User user = userService.getById(1);
-        System.out.println(user);
+        List<User> users = userService.getAll();
+        System.out.println(users);
     }
 }

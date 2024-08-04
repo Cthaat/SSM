@@ -33,6 +33,6 @@ public interface UserDao
     @Select ("select * from test where id = #{id}")
     User getById(int id);
 
-    @Select ("select * from test")
     List<User> getAll();
+
 }
