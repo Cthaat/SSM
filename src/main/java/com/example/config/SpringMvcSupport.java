@@ -1,6 +1,9 @@
 package com.example.config;
 
+import com.example.controller.interceptor.ProjectInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -15,6 +18,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 @Configuration
 public class SpringMvcSupport extends WebMvcConfigurationSupport
 {
+    @Autowired
+    private ProjectInterceptor projectInterceptor;
+
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry)
     {
@@ -22,5 +28,11 @@ public class SpringMvcSupport extends WebMvcConfigurationSupport
         registry.addResourceHandler("/css/**").addResourceLocations("/css/");
         registry.addResourceHandler("/js/**").addResourceLocations("/js/");
         registry.addResourceHandler("/plugins/**").addResourceLocations("/plugins/");
+    }
+
+    @Override
+    protected void addInterceptors(InterceptorRegistry registry)
+    {
+        registry.addInterceptor(projectInterceptor).addPathPatterns("/**");
     }
 }
