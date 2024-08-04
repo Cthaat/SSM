@@ -1,7 +1,10 @@
 package com.example.dao;
 
 import com.example.domain.User;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
 
@@ -19,17 +22,17 @@ import java.util.List;
 public interface UserDao
 {
     @Insert ("insert into test (workno, name) values (#{workno} , #{name})")
-    public void save(User user);
+    void save(User user);
 
-    @Insert ("update test set workno = #{workno}, name = #{name} where id = #{id}")
-    public void update(User user);
+    @Update ("update test set workno = #{workno}, name = #{name} where id = #{id}")
+    void update(User user);
 
-    @Insert ("delete from test where id = #{id}")
-    public void delete(int id);
+    @Delete ("delete from test where id = #{id}")
+    void delete(int id);
 
-    @Insert ("select * from test where id = #{id}")
-    public User getById(int id);
+    @Select ("select * from test where id = #{id}")
+    User getById(int id);
 
-    @Insert ("select * from test")
-    public List<User> getAll();
+    @Select ("select * from test")
+    List<User> getAll();
 }
