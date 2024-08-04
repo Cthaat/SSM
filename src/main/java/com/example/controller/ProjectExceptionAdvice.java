@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
@@ -13,4 +14,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class ProjectExceptionAdvice
 {
+    @ExceptionHandler(Exception.class)
+    public void doException(Exception e)
+    {
+        System.out.println("Exception occurred: " + e.getMessage());
+    }
 }
