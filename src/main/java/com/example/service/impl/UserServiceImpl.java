@@ -2,6 +2,8 @@ package com.example.service.impl;
 
 import com.example.dao.UserDao;
 import com.example.domain.User;
+import com.example.exception.BusinessException;
+import com.example.exception.SystemException;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,6 +48,19 @@ public class UserServiceImpl implements UserService
     @Override
     public User getById(int id)
     {
+        if (id == 0)
+        {
+            throw new BusinessException(666 , "id不能为0" , null);
+        }
+        try
+        {
+            int i = 1 / 0;
+        }
+        catch (ArithmeticException e)
+        {
+            throw new SystemException(666 , "除数不能为0" , e);
+        }
+
         return userDao.getById(id);
     }
 
