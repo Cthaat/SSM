@@ -46,6 +46,9 @@ public class UserController
     @GetMapping("/{id}")
     public Result getById(@PathVariable int id)
     {
+        int i = 1/0;
+
+
         User user = userService.getById(id);
         Integer code = user == null ? Code.GET_ERR : Code.GET_OK;
         String msg = user == null ? "User not found" : "User found";

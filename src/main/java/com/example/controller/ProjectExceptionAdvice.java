@@ -1,6 +1,8 @@
 package com.example.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
@@ -15,8 +17,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ProjectExceptionAdvice
 {
     @ExceptionHandler(Exception.class)
-    public void doException(Exception e)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public Result doException(Exception e)
     {
         System.out.println("Exception occurred: " + e.getMessage());
+        return new Result(500,null , "Exception occurred: " + e.getMessage());
     }
 }
