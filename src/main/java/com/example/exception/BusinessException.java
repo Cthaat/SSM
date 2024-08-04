@@ -1,7 +1,7 @@
 package com.example.exception;
 
 /**
- * @Description: busness
+ * @Description: business
  * @ClassName: BusinessException
  * @Author: Edge
  * @Date: 2024/8/4 15:18
