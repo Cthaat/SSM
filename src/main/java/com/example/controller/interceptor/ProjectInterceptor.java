@@ -22,6 +22,8 @@ public class ProjectInterceptor implements HandlerInterceptor
     public boolean preHandle(HttpServletRequest request , HttpServletResponse response , Object handler) throws Exception
     {
         System.out.println("ProjectInterceptor preHandle");
+        System.out.println(request.getHeader("User-Agent"));
+        response.setHeader("Content-Type" , "application/json;charset=UTF-8");
         return true;
     }
 
